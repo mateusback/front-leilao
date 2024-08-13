@@ -1,21 +1,28 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/home/home';
-import Login from './pages/login/login';
-import Header from './components/header/header';
-import Footer from './components/footer/footer';
+import DefaultLayout from './components/DefaultLayout';
+import SimpleLayout from './components/SimpleLayout';
+import Home from './pages/home/Home';
+import Login from './pages/login/Login';
+import Register from './pages/register/Register';
+import PasswordRecovery from './pages/password-recovery/PasswordRecovery';
+import ChangePassword from './pages/change-password/ChangePassword';
+import { ROUTES } from './routes';
 
 function App() {
   return (
    <>
-   <Header />
+   {/* <Header /> */}
    <BrowserRouter>
    <Routes>
-      <Route path="/" Component={Home} />
-      <Route path="/login" Component={Login} />
-      </Routes>
+      <Route path= {ROUTES.HOME} element={<DefaultLayout><Home/></DefaultLayout>}/>
+      <Route path= {ROUTES.LOGIN} element={<SimpleLayout><Login/></SimpleLayout>} />
+      <Route path= {ROUTES.REGISTER} element={<SimpleLayout><Register/></SimpleLayout>} />
+      <Route path= {ROUTES.PASSWORD_RECOVERY} element={<SimpleLayout><PasswordRecovery/></SimpleLayout>} />
+      <Route path= {ROUTES.CHANGE_PASSWORD} element={<SimpleLayout><ChangePassword/></SimpleLayout>} />
+    </Routes>
     </BrowserRouter>
-    <Footer />
+    {/* <Footer /> */}
    </>
   );
 }
