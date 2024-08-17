@@ -1,13 +1,13 @@
 import React from "react";
 import "./PasswordRecovery.css";
-import CardContent from "@mui/material/CardContent";
 import { Input, Grid, Button } from "@mui/material";
 import "@fontsource/roboto/300.css";
 import CancelButton from "../../components/CancelButton";
+import AuthLayout from "../../components/AuthLayout";
 
 const PasswordRecovery = () => {
   return (
-    <CardContent>
+    <AuthLayout headerText="Recuperar Senha">
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Input
@@ -24,7 +24,7 @@ const PasswordRecovery = () => {
         </Grid>
         <CancelButton />
       </Grid>
-    </CardContent>
+    </AuthLayout>
   );
 };
 

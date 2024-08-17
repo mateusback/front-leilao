@@ -1,13 +1,13 @@
 import React from "react";
 import "./Register.css";
-import CardContent from "@mui/material/CardContent";
-import { Input, Grid, Button, Typography } from "@mui/material";
+import { Input, Grid, Button } from "@mui/material";
 import "@fontsource/roboto/300.css";
 import CancelButton from "../../components/CancelButton";
+import AuthLayout from "../../components/AuthLayout";
 
 const Register = () => {
   return (
-    <CardContent>
+    <AuthLayout headerText="Registrar-se">
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Input fullWidth placeholder="Nome" autoComplete="new-password" />
@@ -38,7 +38,7 @@ const Register = () => {
         </Grid>
         <CancelButton />
       </Grid>
-    </CardContent>
+    </AuthLayout>
   );
 };
 

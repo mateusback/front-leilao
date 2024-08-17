@@ -1,9 +1,9 @@
 import React from "react";
-import CardContent from "@mui/material/CardContent";
 import { Input, Grid, Button } from "@mui/material";
 import "@fontsource/roboto/300.css";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../routes";
+import AuthLayout from "../../components/AuthLayout";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Login = () => {
   };
 
   return (
-    <CardContent>
+    <AuthLayout headerText="Login">
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Input fullWidth placeholder="E-mail" autoComplete="new-password" />
@@ -45,7 +45,7 @@ const Login = () => {
           </Button>
         </Grid>
       </Grid>
-    </CardContent>
+    </AuthLayout>
   );
 };
 

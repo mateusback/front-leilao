@@ -1,13 +1,13 @@
 import React from "react";
 import "./ChangePassword.css";
-import CardContent from "@mui/material/CardContent";
-import { Input, Grid, Button, Typography } from "@mui/material";
+import { Input, Grid, Button } from "@mui/material";
 import "@fontsource/roboto/300.css";
 import CancelButton from "../../components/CancelButton";
+import AuthLayout from "../../components/AuthLayout";
 
 const ChangePassword = () => {
   return (
-    <CardContent>
+    <AuthLayout headerText="Alterar Senha">
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Input fullWidth placeholder="E-mail" autoComplete="new-password" />
@@ -39,7 +39,7 @@ const ChangePassword = () => {
         <CancelButton />
         <Grid item xs={6}></Grid>
       </Grid>
-    </CardContent>
+    </AuthLayout>
   );
 };
 
