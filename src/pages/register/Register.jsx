@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Register.css";
 import { Input, Grid, Button } from "@mui/material";
 import "@fontsource/roboto/300.css";
 import CancelButton from "../../components/CancelButton";
 import AuthLayout from "../../components/AuthLayout";
+import PasswordInput from "../../components/inputs/PasswordInput";
 
 const Register = () => {
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   return (
     <AuthLayout headerText="Registrar-se">
       <Grid container spacing={2}>
@@ -16,19 +19,17 @@ const Register = () => {
           <Input fullWidth placeholder="E-mail" autoComplete="new-password" />
         </Grid>
         <Grid item xs={12}>
-          <Input
-            fullWidth
-            type="password"
-            placeholder="Senha"
-            autoComplete="new-password"
+        <PasswordInput
+            value={password}
+            onChange={setPassword}
+            label="Senha"
           />
         </Grid>
         <Grid item xs={12}>
-          <Input
-            fullWidth
-            type="password"
-            placeholder="Repita a senha"
-            autoComplete="new-password"
+        <PasswordInput
+            value={confirmPassword}
+            onChange={setConfirmPassword}
+            label="Repita a senha"
           />
         </Grid>
         <Grid item xs={12}>
