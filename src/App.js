@@ -8,6 +8,7 @@ import Register from './pages/register/Register';
 import PasswordRecovery from './pages/password-recovery/PasswordRecovery';
 import ChangePassword from './pages/change-password/ChangePassword';
 import { ROUTES } from './routes';
+import AuthLayout from './components/AuthLayout';
 
 function App() {
   return (
@@ -16,10 +17,10 @@ function App() {
    <BrowserRouter>
    <Routes>
       <Route path= {ROUTES.HOME} element={<DefaultLayout><Home/></DefaultLayout>}/>
-      <Route path= {ROUTES.LOGIN} element={<SimpleLayout><Login/></SimpleLayout>} />
-      <Route path= {ROUTES.REGISTER} element={<SimpleLayout><Register/></SimpleLayout>} />
-      <Route path= {ROUTES.PASSWORD_RECOVERY} element={<SimpleLayout><PasswordRecovery/></SimpleLayout>} />
-      <Route path= {ROUTES.CHANGE_PASSWORD} element={<SimpleLayout><ChangePassword/></SimpleLayout>} />
+      <Route path= {ROUTES.LOGIN} element={<AuthLayout><Login/></AuthLayout>} />
+      <Route path= {ROUTES.REGISTER} element={<AuthLayout><Register/></AuthLayout>} />
+      <Route path= {ROUTES.PASSWORD_RECOVERY} element={<AuthLayout><PasswordRecovery/></AuthLayout>} />
+      <Route path= {ROUTES.CHANGE_PASSWORD} element={<AuthLayout><ChangePassword/></AuthLayout>} />
     </Routes>
     </BrowserRouter>
     {/* <Footer /> */}
