@@ -5,12 +5,14 @@ import {
   CardMedia,
   Grid,
   Typography,
+  useMediaQuery
 } from "@mui/material";
 import React from "react";
 import backgroundImage from "../components/images/background.jpg";
 import loginHeader from "../components/images/loginheader.png";
 
 const AuthLayout = ({ children, headerText }) => {
+  const matches = useMediaQuery('(min-width:768px)');
   return (
     <Box
       sx={{
@@ -29,7 +31,7 @@ const AuthLayout = ({ children, headerText }) => {
         alignItems="center"
         style={{ height: "100vh", paddingRight: { sm: "20px", xs: 0 } }}
       >
-        <Grid item xs={20} sm={6} md={4}>
+        <Grid item xs={20} sm={6} md={4} style={{ marginRight: matches ? '40px' : 0 }}>
           <Card variant="outlined">
             <CardMedia
               sx={{ height: 140 }}
