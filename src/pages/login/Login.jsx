@@ -4,7 +4,6 @@ import "@fontsource/roboto/300.css";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../routes";
 import AuthLayout from "../../components/AuthLayout";
-import { Password } from "@mui/icons-material";
 
 const Login = () => {
   const navigate = useNavigate();

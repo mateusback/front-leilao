@@ -1,0 +1,11 @@
+{
+  "home": {
+    "welcome": "Welcome to our site!"
+  },
+  "login": {
+    "title": "Login",
+    "email": "E-mail",
+    "password": "Password",
+    "submit": "Sign in"
+  }
+}
