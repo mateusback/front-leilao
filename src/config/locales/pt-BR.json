@@ -6,6 +6,46 @@
 		"title": "Login",
 		"email": "E-mail",
 		"password": "Senha",
-		"submit": "Entrar"
+		"submit": "Entrar",
+		"change-password": "Alterar senha",
+		"register": "Cadastrar-se",
+		"forgot-password": "Esqueci minha senha"
+	},
+	"button": {
+		"send-email": "Enviar e-mail",
+		"cancel": "Cancelar",
+		"save": "Salvar",
+		"delete": "Excluir",
+		"edit": "Editar",
+		"add": "Adicionar",
+		"back": "Voltar",
+		"next": "Próximo",
+		"finish": "Finalizar",
+		"sign-in": "Entrar",
+		"sign-up": "Cadastrar",
+		"sign-out": "Sair"
+	},
+	"input": {
+		"password": {
+			"field": "Senha",
+			"password-confirmation": "Confirmação de senha",
+			"password-six-characters": "A senha deve ter pelo menos 6 caracteres.",
+			"password-one-uppercase": "A senha deve ter pelo menos uma letra maiúscula.",
+			"password-one-lowercase": "A senha deve ter pelo menos uma letra minúscula.",
+			"password-one-number": "A senha deve ter pelo menos um número.",
+			"password-one-special-character": "A senha deve ter pelo menos um caractere especial."
+		},
+		"email": {
+			"field": "E-mail",
+			"email-invalid": "E-mail inválido."
+		},
+		"name": {
+			"field": "Nome",
+			"name-required": "Nome é obrigatório."
+		},
+		"passcode": {
+			"field": "Código",
+			"passcode-required": "Código é obrigatório."
+		}
 	}
 }

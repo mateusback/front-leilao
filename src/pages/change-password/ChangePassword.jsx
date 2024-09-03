@@ -1,40 +1,45 @@
 import React, { useState } from "react";
-import "./ChangePassword.css";
-import { Input, Grid, Button } from "@mui/material";
-import "@fontsource/roboto/300.css";
+import { Input, Grid, Button, Typography, Box } from "@mui/material";
 import CancelButton from "../../components/CancelButton";
 import AuthLayout from "../../components/AuthLayout";
 import PasswordInput from "../../components/inputs/PasswordInput";
+import { useTranslation } from "react-i18next";
+import OTP from "../../components/inputs/OTP";
+import "@fontsource/roboto/300.css";
+import "./ChangePassword.css";
 
 const ChangePassword = () => {
+  const { t, i18n } = useTranslation();
   const [password, setPassword] = useState("");
+  const [passcode, setPasscode] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   return (
-    <AuthLayout headerText="Alterar Senha">
+    <AuthLayout headerText={t('login.change-password')}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <Input fullWidth placeholder="E-mail" autoComplete="new-password" />
+          <Input fullWidth placeholder={t('input.email.field')}autoComplete="new-password" />
         </Grid>
-        <Grid item xs={6}>
-          <Input fullWidth placeholder="Código" autoComplete="new-password" />
+        <Grid item xs={12} container direction="column" alignItems="center" justifyContent="left">
+          <Typography variant="body1" color="grey">{t('input.passcode.field')}:</Typography>
+          <OTP separator={<span>-</span>} value={passcode} onChange={setPasscode} length={5} />
         </Grid>
         <Grid item xs={12}>
-        <PasswordInput
+          <PasswordInput
             value={password}
             onChange={setPassword}
-            label="Repita a senha"
+            placeholderText={t('input.password.field')}
           />
         </Grid>
         <Grid item xs={12}>
-        <PasswordInput
+          <PasswordInput
             value={confirmPassword}
             onChange={setConfirmPassword}
-            label="Repita a senha"
+            placeholderText={t('input.password.password-confirmation')}
           />
         </Grid>
         <Grid item xs={12}>
           <Button fullWidth variant="contained">
-            Alterar a senha
+          {t('login.change-password')}
           </Button>
         </Grid>
         <CancelButton />
