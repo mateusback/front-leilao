@@ -1,0 +1,51 @@
+{
+	"home": {
+		"welcome": "Welcome to our site!"
+	},
+	"login": {
+		"title": "Login",
+		"email": "E-mail",
+		"password": "Password",
+		"submit": "Sign in",
+		"change-password": "Change password",
+		"register": "Sign up",
+		"forgot-password": "Forgot password"
+	},
+	"button": {
+		"send-email": "Send e-mail",
+		"cancel": "Cancel",
+		"save": "Save",
+		"delete": "Delete",
+		"edit": "Edit",
+		"add": "Add",
+		"back": "Back",
+		"next": "Next",
+		"finish": "Finish",
+		"sign-in": "Sign in",
+		"sign-up": "Sign up",
+		"sign-out": "Sign out"
+	},
+	"input": {
+		"password": {
+			"field": "Password",
+			"password-confirmation": "Password confirmation",
+			"password-six-characters": "Password must be at least 6 characters long",
+			"password-one-uppercase": "Password must have at least one uppercase letter",
+			"password-one-lowercase": "Password must have at least one lowercase letter",
+			"password-one-number": "Password must have at least one number",
+			"password-one-special-character": "Password must have at least one special character"
+		},
+		"email": {
+			"field": "E-mail",
+			"email-invalid": "Invalid E-mail"
+		},
+		"name": {
+			"field": "Name",
+			"name-required": "Name is required"
+		},
+		"passcode": {
+			"field": "Passcode",
+			"passcode-required": "Passcode is required"
+		}
+	}
+}
