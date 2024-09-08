@@ -8,11 +8,14 @@ const Header = () => {
 
     return (
         <Grid className={`${style.header}`} container spacing={0}>
-            <Grid item xs={11}>
-                <Typography variant="h4" color="initial">Header</Typography>
+            <Grid item xs={12}>
+                <Typography variant="h4" color="initial">Banlance</Typography>
+                <Grid item xs={1} display="flex" alignItems="center" justifyContent='right'>
+                    <AvatarIcon />
+                </Grid>
             </Grid>
-            <Grid item xs={1} display="flex" alignItems="center" justifyContent='right'>
-                <AvatarIcon />
+            <Grid item xs={12}>
+                <Typography variant="body1" color="initial">No leilão do sabor, só dá banana!</Typography>
             </Grid>
         </Grid>
     );
