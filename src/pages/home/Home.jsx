@@ -1,60 +1,62 @@
 import React from "react";
 import style from "./Home.module.css";
-import { Grid, Button, Typography } from "@mui/material";
+import { Grid, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../routes";
-import { useTranslation } from "react-i18next";
 
 const Home = () => {
-  const {i18n} = useTranslation();
   const navigate = useNavigate();
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  }
-
-  const handleLoginClick = () => {
-    navigate(ROUTES.LOGIN);
+  const handleViewItem = (itemId) => {
+    // Navega para a página de detalhes do item
+    navigate(`${ROUTES.ITEM_DETAILS}/${itemId}`);
   };
 
-  const handleChangePasswordClick = () => {
-    navigate(ROUTES.CHANGE_PASSWORD);
-  };
+  const items = [
+    {
+      id: 1,
+      title: "Item 1",
+      description: "Descrição breve do item 1.",
+      imageUrl: "https://via.placeholder.com/300x200",
+    },
+    {
+      id: 2,
+      title: "Item 2",
+      description: "Descrição breve do item 2.",
+      imageUrl: "https://via.placeholder.com/300x200",
+    },
+    {
+      id: 3,
+      title: "Item 3",
+      description: "Descrição breve do item 3.",
+      imageUrl: "https://via.placeholder.com/300x200",
+    },
+    // Adicione mais itens conforme necessário
+  ];
 
   return (
-    <Grid container justifyContent="center">
-      <Grid item xs={20} sm={6} md={4}>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <Button onClick={() => changeLanguage('en')}>EN</Button>
-            <Button onClick={() => changeLanguage('pt-BR')}>PT</Button>
-            <Typography className={`${style.textColor}`} textAlign="center" variant="h4">
-              {i18n.t('home.welcome')}
-            </Typography>
-          </Grid>
-          <Grid item xs={6}>
-            <Button
-              fullWidth
-              color="secondary"
-              variant="contained"
-              onClick={handleLoginClick}
-            >
-              Login
-            </Button>
-          </Grid>
-          <Grid item xs={6}>
-            <Button
-              fullWidth
-              variant="contained"
-              onClick={handleChangePasswordClick}
-              color="primary"
-            >
-              Mudar a senha
-            </Button>
-          </Grid>
-        </Grid>
+    <div className={style.homeContainer}>
+      <Typography variant="h1" className={style.pageTitle}>
+        Itens em Leilão
+      </Typography>
+      <Grid container className={style.itemContainer}>
+        {items.map((item) => (
+          <div key={item.id} className={style.itemCard}>
+            <img src={item.imageUrl} alt={item.title} />
+            <div className={style.itemDetails}>
+              <Typography variant="h2">{item.title}</Typography>
+              <Typography variant="body1">{item.description}</Typography>
+              <Button
+                className={style.button}
+                onClick={() => handleViewItem(item.id)}
+              >
+                Ver Detalhes
+              </Button>
+            </div>
+          </div>
+        ))}
       </Grid>
-    </Grid>
+    </div>
   );
 };
 

@@ -2,6 +2,9 @@
 	"home": {
 		"welcome": "Bem vindo ao nosso site!"
 	},
+	"brand": {
+		"slogan": "No leilão do sabor, só dá banana!"
+	},
 	"login": {
 		"title": "Login",
 		"email": "E-mail",

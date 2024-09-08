@@ -2,6 +2,9 @@
 	"home": {
 		"welcome": "Welcome to our site!"
 	},
+	"brand": {
+		"slogan": "In the flavor auction, only bananas win!"
+	},
 	"login": {
 		"title": "Login",
 		"email": "E-mail",
