@@ -7,7 +7,7 @@ import AuthLayout from "../../components/AuthLayout";
 import { useTranslation } from "react-i18next";
 
 const PasswordRecovery = () => {
-  const {t, i18n} = useTranslation();
+  const {t} = useTranslation();
   return (
     <AuthLayout headerText={t('login.forgot-password')}>
       <Grid container spacing={2}>

@@ -4,10 +4,9 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import CheckCircleOutline from '@mui/icons-material/CheckCircleOutline';
 import { useTranslation } from 'react-i18next';
-import CodeInput from './OTP';
 
 const PasswordInput = ({ value, onChange, placeholderText }) => {
-    const {t, i18n} = useTranslation();
+    const {t} = useTranslation();
     const [showPassword, setShowPassword] = useState(false);
     const [criteria, setCriteria] = useState({
         minLength: false,

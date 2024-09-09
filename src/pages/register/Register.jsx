@@ -9,7 +9,7 @@ import "@fontsource/roboto/300.css";
 
 
 const Register = () => {
-  const {t, i18n} = useTranslation();
+  const {t} = useTranslation();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   return (

@@ -2,6 +2,16 @@
 	"home": {
 		"welcome": "Welcome to our site!"
 	},
+	"brand": {
+		"slogan": "In the flavor auction, only bananas win!"
+	},
+	"auction":{
+		"auctions-active": "Active Auctions",
+		"last-items-sold": "Last Items Sold",
+		"new-users": "New Users",
+		"total-sales": "Total Sales",
+		"view-details": "View Details"
+	},
 	"login": {
 		"title": "Login",
 		"email": "E-mail",
