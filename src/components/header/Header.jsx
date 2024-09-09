@@ -37,7 +37,18 @@ const Header = () => {
                             <Grid item>
                                 <Button 
                                     onClick={() => handleLanguageChange('en')} 
+                                    variant="outlined"
                                     className={style.languageButton}
+                                    sx={{
+                                    
+                                        borderRadius: '5px',
+                                        color: '#2f2600',
+                                        borderColor: '#fbdd64', 
+                                        '&:hover': {
+                                          borderColor: '#fbdd64',
+                                          backgroundColor: '#fef2c2',
+                                        }
+                                      }}
                                 >
                                     EN
                                 </Button>
@@ -45,7 +56,18 @@ const Header = () => {
                             <Grid item>
                                 <Button 
                                     onClick={() => handleLanguageChange('pt-BR')} 
+                                    variant="outlined"
                                     className={style.languageButton}
+                                    sx={{
+                                        marginRight: '10px',
+                                        borderRadius: '5px',
+                                        color: '#2f2600',
+                                        borderColor: '#fbdd64', 
+                                        '&:hover': {
+                                          borderColor: '#fbdd64',
+                                          backgroundColor: '#fef2c2',
+                                        }
+                                      }}
                                 >
                                     PT
                                 </Button>

@@ -59,18 +59,49 @@ const Login = () => {
           <Button
             onClick={login}
             fullWidth
-            variant="contained">
+            variant="contained"
+            sx={{
+              borderRadius: '5px',
+              color: '#2f2600',
+              backgroundColor: '#fef2c2',
+              borderColor: '#2f2600',
+              '&:hover': {
+                borderColor: '#151100',
+                backgroundColor: '#fbdd64',
+              }
+            }}
+            
+            >
             Login
           </Button>
         </Grid>
         <Grid item xs={6}>
-          <Button fullWidth onClick={handleRegister} variant="outlined">
+          <Button fullWidth onClick={handleRegister} variant="outlined"
+            sx={{
+              borderRadius: '5px',
+              color: '#2f2600',
+              borderColor: '#fbdd64', 
+              '&:hover': {
+                borderColor: '#fbdd64',
+                backgroundColor: '#fef2c2',
+              }
+            }}
+          >
             Cadastrar-se
           </Button>
         </Grid>
         <Grid item xs={6}></Grid>
         <Grid item xs={6}>
-          <Button fullWidth onClick={handlePasswordRecovery}>
+          <Button fullWidth onClick={handlePasswordRecovery}
+            sx={{
+              borderRadius: '5px',
+              color: '#2f2600',
+              '&:hover': {
+                color: '#2f2600',
+                backgroundColor: '#fef7db',
+              }
+            }}
+          >
             Esqueci minha senha
           </Button>
         </Grid>

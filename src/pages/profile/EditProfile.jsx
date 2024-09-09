@@ -65,7 +65,20 @@ const EditProfile = () => {
                             </Grid>
                         </CardContent>
                     </Card>
-                    <Button variant="contained" color="primary" style={{ marginTop: 16 }}>
+                    <Button variant="contained" color="primary" 
+                                sx={{
+                                    marginTop: '10px',
+                                    marginBottom: '20px',
+                                    borderRadius: '5px',
+                                    color: '#2f2600',
+                                    backgroundColor: '#fbdd64',
+                                    borderColor: '#fbdd64', 
+                                    '&:hover': {
+                                      borderColor: '#fbdd64',
+                                      backgroundColor: '#fef2c2',
+                                    }
+                                  }}
+                    >
                         Salvar
                     </Button>
                 </Grid>
