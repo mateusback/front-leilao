@@ -1,9 +1,27 @@
 {
 	"home": {
-		"welcome": "Welcome to our site!"
+		"welcome": "Welcome to our site!",
+		"contact": "Contact",
+		"rights": "All rights reserved"
 	},
 	"brand": {
 		"slogan": "In the flavor auction, only bananas win!"
+	},
+	"profile": {
+		"document": "Document",
+		"name": "Name",
+		"profile": "Profile",
+		"edit-info": "Edit Your Info",
+		"cellphone": "Cellphone"
+	},
+	"address": {
+		"address": "Address",
+		"postal-code": "Postal Code",
+		"state": "State",
+		"city": "City",
+		"neighborhood": "Neighborhood",
+		"number": "Number",
+		"complement": "Complement"
 	},
 	"auction":{
 		"auctions-active": "Active Auctions",
@@ -33,7 +51,10 @@
 		"finish": "Finish",
 		"sign-in": "Sign in",
 		"sign-up": "Sign up",
-		"sign-out": "Sign out"
+		"sign-out": "Sign out",
+		"profile": "Profile",
+		"edit-profile": "Edit Profile",
+		"forgot-password": "Forgot Password"
 	},
 	"input": {
 		"password": {
@@ -43,7 +64,8 @@
 			"password-one-uppercase": "Password must have at least one uppercase letter",
 			"password-one-lowercase": "Password must have at least one lowercase letter",
 			"password-one-number": "Password must have at least one number",
-			"password-one-special-character": "Password must have at least one special character"
+			"password-one-special-character": "Password must have at least one special character",
+			"login-error": "Incorrect Password"
 		},
 		"email": {
 			"field": "E-mail",

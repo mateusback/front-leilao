@@ -12,10 +12,6 @@ const Header = () => {
     const { t, i18n } = useTranslation();
     const navigate = useNavigate();
 
-    const handleLanguageChange = (lng) => {
-        i18n.changeLanguage(lng);
-    };
-
     const handleLogoClick = () => {
         navigate("/");
     };
@@ -28,61 +24,18 @@ const Header = () => {
                         <Grid container alignItems="center">
                             <img src={logo} className={style.logo} alt='logo' onClick={handleLogoClick}/>
                             <Typography variant="h4" className={style.fontFamily} sx={{ marginLeft: 2 }}>
-                                Balance
+                                Banlance
                             </Typography>
                         </Grid>
                     </Grid>
                     <Grid item>
                         <Grid container alignItems="center" spacing={1}>
                             <Grid item>
-                                <Button 
-                                    onClick={() => handleLanguageChange('en')} 
-                                    variant="outlined"
-                                    className={style.languageButton}
-                                    sx={{
-                                    
-                                        borderRadius: '5px',
-                                        color: '#2f2600',
-                                        borderColor: '#fbdd64', 
-                                        '&:hover': {
-                                          borderColor: '#fbdd64',
-                                          backgroundColor: '#fef2c2',
-                                        }
-                                      }}
-                                >
-                                    EN
-                                </Button>
-                            </Grid>
-                            <Grid item>
-                                <Button 
-                                    onClick={() => handleLanguageChange('pt-BR')} 
-                                    variant="outlined"
-                                    className={style.languageButton}
-                                    sx={{
-                                        marginRight: '10px',
-                                        borderRadius: '5px',
-                                        color: '#2f2600',
-                                        borderColor: '#fbdd64', 
-                                        '&:hover': {
-                                          borderColor: '#fbdd64',
-                                          backgroundColor: '#fef2c2',
-                                        }
-                                      }}
-                                >
-                                    PT
-                                </Button>
-                            </Grid>
-                            <Grid item>
                                 <AvatarIcon />
                             </Grid>
                         </Grid>
                     </Grid>
                 </Grid>
-            </Grid>
-            <Grid item xs={12}>
-                <Typography variant="body1" color="initial" className={style.subheader}>
-                    {t("brand.slogan")}
-                </Typography>
             </Grid>
         </Grid>
     );

@@ -36,7 +36,18 @@ const Register = () => {
           />
         </Grid>
         <Grid item xs={12}>
-          <Button fullWidth variant="contained">
+          <Button fullWidth variant="contained"
+            sx={{            
+              borderRadius: '5px',
+              color: '#2f2600',
+              borderColor: '#fbdd64', 
+              backgroundColor: '#fef2c2',
+              '&:hover': {
+                  borderColor: '#fbdd64',
+                  backgroundColor: '#fbdd64',
+              }
+              }}
+          >
           {t('login.register')}
           </Button>
         </Grid>

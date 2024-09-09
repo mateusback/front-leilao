@@ -13,7 +13,17 @@ const CancelButton = () => {
 
     return (
             <Grid item xs={12}>
-                <Button fullWidth onClick={handleCancelClick} variant="outlined">{t("button.sign-out")}</Button>
+                <Button fullWidth onClick={handleCancelClick} variant="outlined"
+                    sx={{            
+                        borderRadius: '5px',
+                        color: '#2f2600',
+                        borderColor: '#fbdd64', 
+                        '&:hover': {
+                            borderColor: '#fbdd64',
+                            backgroundColor: '#fef2c2',
+                        }
+                        }}
+                >{t("button.cancel")}</Button>
             </Grid>
     );
 }

@@ -4,8 +4,10 @@ import { Card, CardContent, Grid, TextField, CardHeader, Avatar, IconButton, Car
 import Address from "../../components/Address";
 import { ROUTES } from "../../routes";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const EditProfile = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
 
     const handleClickProfilePicture = () => {
@@ -30,18 +32,18 @@ const EditProfile = () => {
                             }
                             action={
                                 <IconButton onClick={handleClickProfilePicture} aria-label="Editar Perfil">
-                                    Editar Perfil
+                                    {t('button.edit-profile')}
                                 </IconButton>
                             }
-                            title="Perfil"
-                            subheader="Edite suas informações"
+                            title={t('profile.profile')}
+                            subheader={t('profile.edit-info')}
                         />
                         <CardContent>
                             <Grid container spacing={2}>
                                 <Grid item xs={12}>
                                     <TextField
                                         fullWidth
-                                        placeholder="Nome"
+                                        placeholder={t('profile.name')}
                                         variant="outlined"
                                     />
                                 </Grid>
@@ -55,7 +57,7 @@ const EditProfile = () => {
                                 <Grid item xs={12}>
                                     <TextField
                                         fullWidth
-                                        placeholder="Documento"
+                                        placeholder={t('profile.document')}
                                         variant="outlined"
                                     />
                                 </Grid>
@@ -66,18 +68,19 @@ const EditProfile = () => {
                         </CardContent>
                     </Card>
                     <Button variant="contained" color="primary" 
-                                sx={{
-                                    marginTop: '10px',
-                                    marginBottom: '20px',
-                                    borderRadius: '5px',
-                                    color: '#2f2600',
-                                    backgroundColor: '#fbdd64',
-                                    borderColor: '#fbdd64', 
-                                    '&:hover': {
-                                      borderColor: '#fbdd64',
-                                      backgroundColor: '#fef2c2',
-                                    }
-                                  }}
+                        sx={{
+                            marginLeft: '90%',
+                            marginTop: '10px',
+                            marginBottom: '20px',
+                            borderRadius: '5px',
+                            color: '#2f2600',
+                            backgroundColor: '#fbdd64',
+                            borderColor: '#fbdd64', 
+                            '&:hover': {
+                                borderColor: '#fbdd64',
+                                backgroundColor: '#fef2c2',
+                            }
+                            }}
                     >
                         Salvar
                     </Button>

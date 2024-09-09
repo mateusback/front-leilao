@@ -17,11 +17,7 @@ const ChangePassword = () => {
     <AuthLayout headerText={t('login.change-password')}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <Input fullWidth placeholder={t('input.email.field')}autoComplete="new-password" />
-        </Grid>
-        <Grid item xs={12} container direction="column" alignItems="center" justifyContent="left">
-          <Typography variant="body1" color="grey">{t('input.passcode.field')}:</Typography>
-          <OTP separator={<span>-</span>} value={passcode} onChange={setPasscode} length={5} />
+          <Input fullWidth placeholder={t('input.email.field')}autoComplete="new-password"/>
         </Grid>
         <Grid item xs={12}>
           <PasswordInput
@@ -37,8 +33,23 @@ const ChangePassword = () => {
             placeholderText={t('input.password.password-confirmation')}
           />
         </Grid>
+        <Grid item xs={12} container direction="column" alignItems="center" justifyContent="left">
+          <Typography variant="body1" color="grey">{t('input.passcode.field')}:</Typography>
+          <OTP separator={<span>-</span>} value={passcode} onChange={setPasscode} length={5} />
+        </Grid>
         <Grid item xs={12}>
-          <Button fullWidth variant="contained">
+          <Button fullWidth variant="contained"
+            sx={{            
+              borderRadius: '5px',
+              color: '#2f2600',
+              borderColor: '#fbdd64', 
+              backgroundColor: '#fef2c2',
+              '&:hover': {
+                  borderColor: '#fbdd64',
+                  backgroundColor: '#fbdd64',
+              }
+              }}
+          >
           {t('login.change-password')}
           </Button>
         </Grid>

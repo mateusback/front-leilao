@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { TextField, Grid } from "@mui/material";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 const Address = () => {
+    const { t } = useTranslation();
     const [cep, setCep] = useState("");
     const [address, setAddress] = useState("");
     const [neighborhood, setNeighborhood] = useState("");
@@ -44,10 +46,10 @@ const Address = () => {
             <Grid item xs={12}>
                 <TextField
                     fullWidth
-                    label="CEP"
+                    label={t('address.postal-code')}
                     value={cep}
                     onChange={handleCepChange}
-                    placeholder="Digite o CEP"
+                    placeholder={t('address.postal-code')}
                     error={!!error}
                     helperText={error}
                 />
@@ -55,37 +57,37 @@ const Address = () => {
             <Grid item xs={12}>
                 <TextField
                     fullWidth
-                    label="Endereço"
+                    label={t('address.address')} 
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
-                    placeholder="Endereço"
+                    placeholder={t('address.address')} 
                 />
             </Grid>
             <Grid item xs={12}>
                 <TextField
                     fullWidth
-                    label="Bairro"
+                    label={t('address.neighborhood')} 
                     value={neighborhood}
                     onChange={(e) => setNeighborhood(e.target.value)}
-                    placeholder="Bairro"
+                    placeholder={t('address.neighborhood')} 
                 />
             </Grid>
             <Grid item xs={12}>
                 <TextField
                     fullWidth
-                    label="Cidade"
+                    label={t('address.city')}
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
-                    placeholder="Cidade"
+                    placeholder={t('address.city')}
                 />
             </Grid>
             <Grid item xs={12}>
                 <TextField
                     fullWidth
-                    label="Estado"
+                    label={t('address.state')}
                     value={state}
                     onChange={(e) => setState(e.target.value)}
-                    placeholder="Estado"
+                    placeholder={t('address.state')}
                 />
             </Grid>
         </Grid>

@@ -1,9 +1,27 @@
 {
 	"home": {
-		"welcome": "Bem vindo ao nosso site!"
+		"welcome": "Bem vindo ao nosso site!",
+		"contact": "Contato",
+		"rights": "Todos os direitos reservados"
 	},
 	"brand": {
 		"slogan": "No leilão do sabor, só dá banana!"
+	},
+	"profile": {
+		"document": "Documento",
+		"name": "Nome",
+		"profile": "Perfil",
+		"edit-info": "Edite suas Informações",
+		"cellphone": "Cellphone"
+	},
+	"address": {
+		"address": "Endereço",
+		"postal-code": "CEP",
+		"state": "Estado",
+		"city": "Cidade",
+		"neighborhood": "Bairro",
+		"number": "Número",
+		"complement": "Complemento"
 	},
 	"auction":{
 		"auctions-active": "Leilões Ativos",
@@ -33,7 +51,10 @@
 		"finish": "Finalizar",
 		"sign-in": "Entrar",
 		"sign-up": "Cadastrar",
-		"sign-out": "Sair"
+		"sign-out": "Sair",
+		"profile": "Perfil",
+		"edit-profile": "Editar Perfil",
+		"forgot-password": "Esqueci minha senha"
 	},
 	"input": {
 		"password": {
@@ -43,7 +64,8 @@
 			"password-one-uppercase": "A senha deve ter pelo menos uma letra maiúscula.",
 			"password-one-lowercase": "A senha deve ter pelo menos uma letra minúscula.",
 			"password-one-number": "A senha deve ter pelo menos um número.",
-			"password-one-special-character": "A senha deve ter pelo menos um caractere especial."
+			"password-one-special-character": "A senha deve ter pelo menos um caractere especial.",
+			"login-error": "Email e senha inválidos"
 		},
 		"email": {
 			"field": "E-mail",

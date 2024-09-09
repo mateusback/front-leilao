@@ -4,11 +4,18 @@ import { ROUTES } from "../../routes";
 import { useNavigate } from "react-router-dom";
 import style from './AvatarIcon.module.css';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import { useTranslation } from "react-i18next";
 
 const AvatarIcon = () => {
+    const { t, i18n} = useTranslation();
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const navigate = useNavigate();
+
+
+    const handleLanguageChange = (lng) => {
+        i18n.changeLanguage(lng);
+    };
 
     const handleClickProfilePicture = (event) => {
         setAnchorEl(event.currentTarget);
@@ -80,10 +87,10 @@ const AvatarIcon = () => {
                     paper: style.fadeIn,
                 }}
             >
-                <MenuItem onClick={() => handleNavigate(ROUTES.PROFILE)}>Profile</MenuItem>
-                <MenuItem onClick={() => handleNavigate(ROUTES.SETTINGS)}>Settings</MenuItem>
-                <MenuItem onClick={() => handleNavigate(ROUTES.HELP)}>Help</MenuItem>
-                <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                <MenuItem onClick={() => handleNavigate(ROUTES.PROFILE)}>{t('button.profile')}</MenuItem>
+                <MenuItem onClick={() => handleLanguageChange('pt-BR')}>PT</MenuItem>
+                <MenuItem onClick={() => handleLanguageChange('en')}>ENG</MenuItem>
+                <MenuItem onClick={handleLogout}>{t('button.sign-out')}</MenuItem>
             </Popover>
         </>
     );

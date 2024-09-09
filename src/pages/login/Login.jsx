@@ -4,8 +4,10 @@ import "@fontsource/roboto/300.css";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../routes";
 import AuthLayout from "../../components/AuthLayout";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [usuario, setUsuario] = useState({ email: "", senha: "" });
 
@@ -28,7 +30,7 @@ const Login = () => {
       localStorage.setItem("email", JSON.stringify(usuario.email));
       navigate(ROUTES.HOME);
     } else {
-      alert("Email ou senha inválidos");
+      alert(t('input.password.login-error'));
     }
   };
 
@@ -51,7 +53,7 @@ const Login = () => {
             name="password"
             id="password"
             type="password"
-            placeholder="Senha"
+            placeholder={t('input.password.field')}
             autoComplete="new-password"
           />
         </Grid>
@@ -87,7 +89,7 @@ const Login = () => {
               }
             }}
           >
-            Cadastrar-se
+            {t('button.sign-up')}
           </Button>
         </Grid>
         <Grid item xs={6}></Grid>
@@ -102,7 +104,7 @@ const Login = () => {
               }
             }}
           >
-            Esqueci minha senha
+            {t('button.forgot-password')}
           </Button>
         </Grid>
       </Grid>
