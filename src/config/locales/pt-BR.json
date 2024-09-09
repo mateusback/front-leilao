@@ -5,6 +5,13 @@
 	"brand": {
 		"slogan": "No leilão do sabor, só dá banana!"
 	},
+	"auction":{
+		"auctions-active": "Leilões Ativos",
+		"last-items-sold": "Últimos Itens Arrematados",
+		"new-users": "Novos Usuários",
+		"total-sales": "Total de Vendas",
+		"view-details": "Ver Detalhes"
+	},
 	"login": {
 		"title": "Login",
 		"email": "E-mail",

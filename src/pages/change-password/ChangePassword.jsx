@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Input, Grid, Button, Typography, Box } from "@mui/material";
+import { Input, Grid, Button, Typography } from "@mui/material";
 import CancelButton from "../../components/CancelButton";
 import AuthLayout from "../../components/AuthLayout";
 import PasswordInput from "../../components/inputs/PasswordInput";
@@ -9,7 +9,7 @@ import "@fontsource/roboto/300.css";
 import "./ChangePassword.css";
 
 const ChangePassword = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [password, setPassword] = useState("");
   const [passcode, setPasscode] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");

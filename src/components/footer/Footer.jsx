@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div className={style.footer}>
             <h2>Contato</h2>
-            <p>Email: contato@exemplo.com</p>
+            <p>Email: Lorem@Ipsum.com</p>
             <p>&copy; {new Date().getFullYear()} Balance. Todos os direitos reservados.</p>
             <div className={style.socialIcons}>
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">

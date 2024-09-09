@@ -18,6 +18,12 @@ const AvatarIcon = () => {
         setAnchorEl(null);
     };
 
+    const handleLogout = () => {
+        localStorage.clear();
+        sessionStorage.clear();
+        window.location.reload();
+    };
+
     const handleNavigate = (route) => {
         navigate(route);
         handleClose();
@@ -77,7 +83,7 @@ const AvatarIcon = () => {
                 <MenuItem onClick={() => handleNavigate(ROUTES.PROFILE)}>Profile</MenuItem>
                 <MenuItem onClick={() => handleNavigate(ROUTES.SETTINGS)}>Settings</MenuItem>
                 <MenuItem onClick={() => handleNavigate(ROUTES.HELP)}>Help</MenuItem>
-                <MenuItem onClick={() => handleNavigate(ROUTES.LOGOUT)}>Logout</MenuItem>
+                <MenuItem onClick={handleLogout}>Logout</MenuItem>
             </Popover>
         </>
     );

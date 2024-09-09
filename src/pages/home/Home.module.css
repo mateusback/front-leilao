@@ -1,71 +1,52 @@
 .homeContainer {
-    background: #f9f9f9; /* Cor de fundo neutra */
-    min-height: 100vh; /* Ocupa toda a altura da viewport */
     padding: 20px;
-}
-
-.pageTitle {
-    font-size: 2rem;
-    color: #3e3b29; /* Cor do texto mais suave e confortável */
+  }
+  
+  .pageTitle {
     margin-bottom: 20px;
+  }
+  
+  .statCard {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
-}
-
-.itemContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.itemCard {
-    background: #fff; /* Cor de fundo branca para os cards */
-    border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.itemCard:hover {
-    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
-}
-
-.itemCard img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.itemDetails {
+  }
+  
+  .chartContainer {
+    margin-top: 40px;
+  }
+  
+  .itemContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap; 
+    margin-top: 30px;
+  }
+  
+  .itemCard {
+    background-color: #ffffff;
     padding: 15px;
-}
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .itemCard img {
+    width: 90%;
+    object-fit: cover;
+  }
 
-.itemDetails h2 {
-    font-size: 1.5rem;
-    margin: 0;
-    color: #3e3b29;
-}
-
-.itemDetails p {
-    margin: 10px 0;
-    color: #6d6d6d; /* Cor do texto para descrições */
-}
-
-.button {
-    background-color: #f7b733; /* Amarelo pastel */
-    color: #3e3b29;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color: #f9a825; /* Amarelo um pouco mais intenso ao passar o mouse */
-}
+  .button {
+    background-color: #868800;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  .button:hover {
+    background-color: #c5c209;
+  }
+  

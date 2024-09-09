@@ -1,24 +1,23 @@
 import DefaultLayout from "../../components/DefaultLayout";
-import { Card, CardContent, Grid, Input, CardHeader, Avatar, IconButton, CardMedia, Button, Typography } from "@mui/material";
-import Address from "../../components/Address";
-import { ROUTES } from "../../routes";
+import { Card, CardHeader, CardContent, Grid, Typography, Avatar, IconButton, CardMedia } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import style from './Profile.module.css';
 
 const Profile = () => {
     const navigate = useNavigate();
 
     const handleClickProfilePicture = () => {
-        navigate(ROUTES.EDIT_PROFILE);
+        navigate("/edit-profile");
     };
 
     return (
         <DefaultLayout>
-            <Grid container spacing={2}>
-                <Grid item xs={12}>
-                    <Card>
+            <Grid container spacing={2} justifyContent="center">
+                <Grid item xs={12} sm={8} md={6}>
+                    <Card className={style.card}>
                         <CardHeader
                             avatar={
-                                <Avatar aria-label="Foto de perfil">
+                                <Avatar className={style.avatar}>
                                     <CardMedia
                                         component="img"
                                         image="https://upload.wikimedia.org/wikipedia/pt/5/53/Snoopy_Peanuts.png"
@@ -27,62 +26,35 @@ const Profile = () => {
                                 </Avatar>
                             }
                             action={
-                                <IconButton onClick={handleClickProfilePicture} aria-label="TESTE">
+                                <IconButton className={style.iconButton} onClick={handleClickProfilePicture} aria-label="Editar Perfil">
                                     Editar Perfil
                                 </IconButton>
                             }
-                            title="NOME DO BANCO"
+                            title={<Typography variant="h5">NOME DO BANCO</Typography>}
                             subheader="E-MAIL DO BANCO"
-
+                            className={style.cardHeader}
                         />
-                        <CardContent>
+                        <CardContent className={style.cardContent}>
                             <Grid container spacing={2}>
-                                {/* <Grid item xs={12}>
-                                    <Typography variant="h6" color="initial">Nome: </Typography>
-                                    Nome do banco
-                                </Grid>
                                 <Grid item xs={12}>
-                                    <Typography variant="h6" color="initial">E-mail: </Typography>
-                                    E-mail do banco
-                                </Grid> */}
-                                <Grid item xs={12}>
-                                    <Typography variant="h6" color="initial">Documento: </Typography>
+                                    <Typography className={style.typography} variant="body1">Documento:</Typography>
                                     Documento do Banco
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <Typography variant="h6" color="initial">Telefone: </Typography>
+                                    <Typography className={style.typography} variant="body1">Telefone:</Typography>
                                     Telefone do Banco
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <Typography variant="h6" color="initial">CEP: </Typography>
-                                    CEP do Banco
+                                    <Typography className={style.typography} variant="body1">Endereço:</Typography>
+                                    <Typography variant="body2">CEP: CEP do Banco</Typography>
+                                    <Typography variant="body2">Rua: Rua do Banco</Typography>
+                                    <Typography variant="body2">Número: Numero banco</Typography>
+                                    <Typography variant="body2">Complemento: Complemento do banco</Typography>
+                                    <Typography variant="body2">Bairro: Bairro do banco</Typography>
+                                    <Typography variant="body2">Cidade: Cidade do banco</Typography>
+                                    <Typography variant="body2">Estado: Estado do banco</Typography>
                                 </Grid>
-                                <Grid item xs={12}>
-                                    <Typography variant="h6" color="initial">Rua: </Typography>
-                                    Rua do Banco
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <Typography variant="h6" color="initial">Número: </Typography>
-                                    Numero banco
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <Typography variant="h6" color="initial">Complemento: </Typography>
-                                    Complemento do banco
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <Typography variant="h6" color="initial">Bairro: </Typography>
-                                    Bairro do banco
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <Typography variant="h6" color="initial">Cidade: </Typography>
-                                    Cidade do banco
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <Typography variant="h6" color="initial">Estado: </Typography>
-                                    Estado do banco
-                                </Grid> 
                             </Grid>
-
                         </CardContent>
                     </Card>
                 </Grid>

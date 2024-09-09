@@ -1,5 +1,6 @@
+import React from "react";
 import DefaultLayout from "../../components/DefaultLayout";
-import { Card, CardContent, Grid, Input, CardHeader, Avatar, IconButton, CardMedia, Button } from "@mui/material";
+import { Card, CardContent, Grid, TextField, CardHeader, Avatar, IconButton, CardMedia, Button } from "@mui/material";
 import Address from "../../components/Address";
 import { ROUTES } from "../../routes";
 import { useNavigate } from "react-router-dom";
@@ -18,42 +19,55 @@ const EditProfile = () => {
                     <Card>
                         <CardHeader
                             avatar={
-                                <Avatar aria-label="Foto de perfil">
+                                <Avatar>
                                     <CardMedia
                                         component="img"
                                         image="https://upload.wikimedia.org/wikipedia/pt/5/53/Snoopy_Peanuts.png"
                                         alt="Foto de perfil"
+                                        style={{ width: '100%', height: '100%' }}
                                     />
                                 </Avatar>
                             }
                             action={
-                                <IconButton  onClick={handleClickProfilePicture} aria-label="TESTE">
+                                <IconButton onClick={handleClickProfilePicture} aria-label="Editar Perfil">
                                     Editar Perfil
                                 </IconButton>
                             }
                             title="Perfil"
                             subheader="Edite suas informações"
-
                         />
                         <CardContent>
                             <Grid container spacing={2}>
                                 <Grid item xs={12}>
-                                    <Input fullWidth placeholder="Nome" />
+                                    <TextField
+                                        fullWidth
+                                        placeholder="Nome"
+                                        variant="outlined"
+                                    />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <Input fullWidth placeholder="E-mail" />
+                                    <TextField
+                                        fullWidth
+                                        placeholder="E-mail"
+                                        variant="outlined"
+                                    />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <Input fullWidth placeholder="Documento" />
+                                    <TextField
+                                        fullWidth
+                                        placeholder="Documento"
+                                        variant="outlined"
+                                    />
                                 </Grid>
                                 <Grid item xs={12}>
                                     <Address />
                                 </Grid>
                             </Grid>
-
                         </CardContent>
                     </Card>
-                    <Button>Salvar</Button>
+                    <Button variant="contained" color="primary" style={{ marginTop: 16 }}>
+                        Salvar
+                    </Button>
                 </Grid>
             </Grid>
         </DefaultLayout>
