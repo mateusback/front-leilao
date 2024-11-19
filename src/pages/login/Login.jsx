@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { Input, Grid, Button } from "@mui/material";
-import "@fontsource/roboto/300.css";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../routes";
-import AuthLayout from "../../components/AuthLayout";
 import { useTranslation } from "react-i18next";
+import { toast } from 'react-toastify';
+import PersonSerivce from "../../services/PersonService";
+import AuthLayout from "../../components/AuthLayout";
+import "@fontsource/roboto/300.css";
 
 const Login = () => {
   const { t } = useTranslation();
+  const personService = new PersonSerivce();
   const navigate = useNavigate();
-  const [usuario, setUsuario] = useState({ email: "", senha: "" });
+  const [usuario, setUsuario] = useState({ email: "", password: "" });
 
   const handlePasswordRecovery = () => {
     navigate(ROUTES.PASSWORD_RECOVERY);
@@ -23,14 +26,23 @@ const Login = () => {
     setUsuario({ ...usuario, [e.target.name]: e.target.value });
   };
 
-  const login = () => {
-    if (usuario.email === "email@email.com" || usuario.senha === "123456") {
-      let token = "token do backend";
+  const login = async () => {
+    try {
+      const response = await personService.login(usuario);
+      let token = response.token;
       localStorage.setItem("token", token);
       localStorage.setItem("email", JSON.stringify(usuario.email));
       navigate(ROUTES.HOME);
-    } else {
-      alert(t('input.password.login-error'));
+    } catch (err) {
+      toast.error(err.message || "Erro ao realizar login.", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
     }
   };
 
@@ -49,7 +61,7 @@ const Login = () => {
         <Grid item xs={12}>
           <Input
             fullWidth
-            onAbort={handleChange}
+            onChange={handleChange}
             name="password"
             id="password"
             type="password"

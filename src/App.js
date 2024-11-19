@@ -10,6 +10,7 @@ import { ROUTES } from './routes';
 import PrivateRouter from './components/PrivateRouter';
 import Profile from './pages/profile/Profile';
 import EditProfile from './pages/profile/EditProfile';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path={ROUTES.CHANGE_PASSWORD} element={<ChangePassword />} />
         </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </>
   );
 }
