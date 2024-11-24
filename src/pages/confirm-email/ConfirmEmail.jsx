@@ -3,7 +3,7 @@ import { Input, Grid, Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { toast } from 'react-toastify';
 import { ROUTES } from "../../routes";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import CancelButton from "../../components/CancelButton";
 import AuthLayout from "../../components/AuthLayout";
 import OTP from "../../components/inputs/OTP";
@@ -13,7 +13,8 @@ import "@fontsource/roboto/300.css";
 const ConfirmEmail = () => {
   const { t } = useTranslation();
   const [passcode, setPasscode] = useState("");
-  const [email, setEmail] = useState("");
+  const [searchParams] = useSearchParams();
+  const [email, setEmail] = useState(searchParams.get("email"));
   const navigate = useNavigate();
   const personService = new PersonService();
 
@@ -30,6 +31,9 @@ const ConfirmEmail = () => {
         draggable: true,
         progress: undefined,
       });
+      let token = response.token;
+      localStorage.setItem("token", token);
+      localStorage.setItem("email", JSON.stringify(usuario.email));
       navigate(ROUTES.HOME);
     } catch (err) {
       toast.error(err.message || "Erro ao realizar o confirmar conta.", {
@@ -49,8 +53,9 @@ const ConfirmEmail = () => {
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Input 
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
-            fullWidth 
+            fullWidth
             placeholder={t('input.email.field')}
             autoComplete="new-password"/>
         </Grid>

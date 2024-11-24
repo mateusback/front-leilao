@@ -23,8 +23,8 @@ const Register = () => {
 
   const register = async () => {
     try {
-      const response = await personService.register(usuario);
-      toast.success("Cadastro realizado com sucesso! Agora, cofirme sua conta", {
+      await personService.register(usuario);
+      toast.success("Cadastro realizado com sucesso! Agora cofirme sua conta.", {
         position: "top-center",
         autoClose: 3000,
         hideProgressBar: false,
@@ -33,7 +33,7 @@ const Register = () => {
         draggable: true,
         progress: undefined,
       });
-      navigate(ROUTES.CONFIRM_EMAIL);
+      navigate(`${ROUTES.CONFIRM_EMAIL}?email=${encodeURIComponent(usuario.email)}`);
     } catch (err) {
       toast.error(err.message || "Erro ao realizar o cadastro no serviço.", {
         position: "top-center",

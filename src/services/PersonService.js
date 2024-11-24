@@ -35,6 +35,26 @@ class PersonService extends BaseService{
         }
     }
 
+    async recoverPassword(personEmail){
+        try {
+            const response = await this.api.post(`${this.endpoint}/recover-password`, personEmail);
+            return response.data;
+        }
+        catch (error) {
+            throw new Error(error.response?.data?.message || 'Erro desconhecido ao recuperar a senha, tente novamete mais tarde.');
+        }
+    }
+
+    async changePassword(personData){
+        try {
+            const response = await this.api.patch(`${this.endpoint}/change-password`, personData);
+            return response.data;
+        }
+        catch (error) {
+            throw new Error(error.response?.data?.message || 'Erro desconhecido ao alterar a senha, tente novamete mais tarde.');
+        }
+    }
+
 }
 
 export default PersonService;
