@@ -5,8 +5,8 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import CheckCircleOutline from '@mui/icons-material/CheckCircleOutline';
 import { useTranslation } from 'react-i18next';
 
-const PasswordInput = ({ value, onChange, placeholderText }) => {
-    const {t} = useTranslation();
+const PasswordInput = ({ name, value, onChange, placeholderText }) => {
+    const { t } = useTranslation();
     const [showPassword, setShowPassword] = useState(false);
     const [criteria, setCriteria] = useState({
         minLength: false,
@@ -34,7 +34,7 @@ const PasswordInput = ({ value, onChange, placeholderText }) => {
 
     const handleChange = (event) => {
         const newPassword = event.target.value;
-        onChange(newPassword);
+        onChange({ target: { name, value: newPassword } });
         setCriteria(validatePassword(newPassword));
     };
 

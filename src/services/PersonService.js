@@ -1,7 +1,6 @@
 import BaseService from "./BaseService";
 
 class PersonService extends BaseService{
-
     constructor(){
         super('/person');
     }
@@ -9,13 +8,33 @@ class PersonService extends BaseService{
     async login(credentials){
         try {
             const response = await this.api.post(`${this.endpoint}/login`, credentials);
-            console.log(response)
             return response.data;
         }
         catch (error) {
             throw new Error(error.response?.data?.message || 'Erro desconhecido ao realizar login.');
         }
     }
+
+    async register(personData){
+        try {
+            const response = await this.api.post(this.endpoint, personData);
+            return response.data;
+        }
+        catch (error) {
+            throw new Error(error.response?.data?.message || 'Erro desconhecido ao registrar sua conta, tenta novamente mais tarde.');
+        }
+    }
+
+    async confirmEmail(personData){
+        try {
+            const response = await this.api.patch(`${this.endpoint}/confirm-registration`, personData);
+            return response.data;
+        }
+        catch (error) {
+            throw new Error(error.response?.data?.message || 'Erro desconhecido ao confirmar sua conta, tenta novamente mais tarde.');
+        }
+    }
+
 }
 
 export default PersonService;

@@ -5,5 +5,6 @@ export const ROUTES = {
     PASSWORD_RECOVERY: '/password-recovery',
     CHANGE_PASSWORD: '/change-password',
     PROFILE: '/profile',
-    EDIT_PROFILE: '/edit-profile'
+    EDIT_PROFILE: '/edit-profile',
+    CONFIRM_EMAIL: '/confirm-email',
 };

@@ -37,7 +37,8 @@
 		"submit": "Entrar",
 		"change-password": "Alterar senha",
 		"register": "Cadastrar-se",
-		"forgot-password": "Esqueci minha senha"
+		"forgot-password": "Esqueci minha senha",
+		"confirm-email": "Confirme seu e-mail"
 	},
 	"button": {
 		"send-email": "Enviar e-mail",

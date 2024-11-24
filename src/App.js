@@ -11,6 +11,7 @@ import PrivateRouter from './components/PrivateRouter';
 import Profile from './pages/profile/Profile';
 import EditProfile from './pages/profile/EditProfile';
 import { ToastContainer } from 'react-toastify';
+import ConfirmEmail from './pages/confirm-email/ConfirmEmail';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path={ROUTES.REGISTER} element={<Register />} />
           <Route path={ROUTES.PASSWORD_RECOVERY} element={<PasswordRecovery />} />
           <Route path={ROUTES.CHANGE_PASSWORD} element={<ChangePassword />} />
+          <Route path={ROUTES.CONFIRM_EMAIL} element={<ConfirmEmail />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer />

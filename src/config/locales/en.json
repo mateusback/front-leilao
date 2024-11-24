@@ -37,7 +37,8 @@
 		"submit": "Sign in",
 		"change-password": "Change password",
 		"register": "Sign up",
-		"forgot-password": "Forgot password"
+		"forgot-password": "Forgot password",
+		"confirm-email": "Confirm your e-mail"
 	},
 	"button": {
 		"send-email": "Send e-mail",
