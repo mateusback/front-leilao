@@ -2,17 +2,18 @@ import React, { useState } from "react";
 import { TextField, Button, Grid, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import axios from "axios";
+import CategoryService from "../../../services/CategoryService";
 import { ROUTES } from "../../../routes";
 
 const CategoryForm = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const categoryService = new CategoryService();
 
   const [formData, setFormData] = useState({
     name: "",
     observation: "",
-    personId: "", 
+    personId: 1, 
   });
 
   const handleChange = (e) => {
@@ -22,15 +23,7 @@ const CategoryForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    axios
-      .post("/api/category", formData)
-      .then(() => {
-        navigate(ROUTES.HOME);
-      })
-      .catch((error) => {
-        console.error("Erro ao salvar categoria:", error);
-      });
+    categoryService.insert(formData)
   };
 
   return (

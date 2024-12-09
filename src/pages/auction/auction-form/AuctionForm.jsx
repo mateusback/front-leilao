@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import { ROUTES } from "../../../routes";
+import AuctionService from "../../../services/AuctionService";
 
 
 const AuctionForm = () => {
@@ -12,6 +13,7 @@ const AuctionForm = () => {
   const navigate = useNavigate();
   const { auctionId } = useParams();
   const [categories, setCategories] = useState([]);
+  const auctionService = new AuctionService();
   const [formData, setFormData] = useState({
     id: "",
     title: "",
@@ -22,7 +24,7 @@ const AuctionForm = () => {
     observation: "",
     incrementValue: "",
     minimumBid: "",
-    personId: "", 
+    personId: 1, 
     categoryId: "",
     images: [], 
   });
@@ -46,7 +48,6 @@ const AuctionForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  // Funções para manipular imagens
   const handleImageChange = (index, field, value) => {
     const updatedImages = [...formData.images];
     updatedImages[index] = { ...updatedImages[index], [field]: value };
@@ -68,10 +69,7 @@ const AuctionForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const endpoint = auctionId ? `/api/auction/${auctionId}` : "/api/auction";
-    const method = auctionId ? "put" : "post";
-
-    axios[method](endpoint, formData)
+    auctionService.insert(formData)
       .then(() => navigate(ROUTES.HOME))
       .catch((error) => console.error("Erro ao salvar leilão:", error));
   };
@@ -184,7 +182,7 @@ const AuctionForm = () => {
               ))}
             </TextField>
           </Grid>
-          {/* Campo para adicionar imagens */}
+          {}
           <Grid item xs={12}>
             <Typography variant="h5" gutterBottom>
               {t("auction.images")}
