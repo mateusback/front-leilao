@@ -28,7 +28,32 @@
 		"last-items-sold": "Últimos Itens Arrematados",
 		"new-users": "Novos Usuários",
 		"total-sales": "Total de Vendas",
-		"view-details": "Ver Detalhes"
+		"view-details": "Ver Detalhes",
+		"add-category": "Adicionar Categoria",
+		"add-auction": "Adicionar Leilão",
+		"edit-auction": "Editar Leilão",
+		"title": "Título",
+		"description": "Descrição",
+		"start-date-time": "Data/Hora de Início",
+		"end-date-time": "Data/Hora de Término",
+		"status": "Status",
+		"observation": "Observação",
+		"increment-value": "Valor do Incremento",
+		"minimum-bid": "Lance Mínimo",
+		"category": "Categoria",
+		"save": "Salvar",
+		"cancel": "Cancelar",
+		"images": "Imagens",
+		"image-name": "Nome da Imagem",
+		"image-path": "Link da Imagem",
+		"add-image": "Adicionar Imagem"
+	},
+	"category": {
+		"add-category": "Adicionar Categoria",
+		"name": "Nome",
+		"observation": "Observação",
+		"save": "Salvar",
+		"cancel": "Cancelar"
 	},
 	"login": {
 		"title": "Login",

@@ -28,7 +28,32 @@
 		"last-items-sold": "Last Items Sold",
 		"new-users": "New Users",
 		"total-sales": "Total Sales",
-		"view-details": "View Details"
+		"view-details": "View Details",
+		"add-category": "Add Category",
+		"add-auction": "Add Auction",
+		"edit-auction": "Edit Auction",
+		"title": "Title",
+		"description": "Description",
+		"start-date-time": "Start Date/Time",
+		"end-date-time": "End Date/Time",
+		"status": "Status",
+		"observation": "Observation",
+		"increment-value": "Increment Value",
+		"minimum-bid": "Minimum Bid",
+		"category": "Category",
+		"save": "Save",
+		"cancel": "Cancel",
+		"images": "Images",
+		"image-name": "Image Name",
+		"image-path": "Image Link",
+		"add-image": "Add Image"
+	},
+	"category": {
+		"add-category": "Add Category",
+		"name": "Name",
+		"observation": "Observation",
+		"save": "Save",
+		"cancel": "Cancel"
 	},
 	"login": {
 		"title": "Login",

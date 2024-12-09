@@ -16,6 +16,14 @@ const Home = () => {
     navigate(`${ROUTES.ITEM_DETAILS}/${itemId}`);
   };
 
+  const handleAddCategory = () => {
+    navigate(`${ROUTES.CATEGORY_FORM}`);
+  };
+
+  const handleAddAuction = () => {
+    navigate(`${ROUTES.AUCTION_FORM}`);
+  };
+
   const stats = {
     auctionsActive: 12,
     lastItemsSold: [
@@ -36,21 +44,42 @@ const Home = () => {
 
   return (
     <div className={style.homeContainer}>
+      <div className={style.headerContainer}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleAddCategory}
+          className={style.addCategoryButton}
+        >
+          {t("category.add-category")}
+        </Button>
+      </div>
+
+      <div className={style.headerContainer}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleAddAuction}
+          className={style.addAuctionButton}
+        >
+          {t("auction.add-auction")}
+        </Button>
+      </div>
 
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6} md={3}>
           <div className={style.statCard}>
-            <Typography variant="h5">{t('auction.auctions-active')}</Typography>
+            <Typography variant="h5">{t("auction.auctions-active")}</Typography>
             <Typography variant="h3">{stats.auctionsActive}</Typography>
           </div>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <div className={style.statCard}>
-            <Typography variant="h5">{t('auction.last-items-sold')}</Typography>
+            <Typography variant="h5">{t("auction.last-items-sold")}</Typography>
             <ul>
               {stats.lastItemsSold.map((item) => (
                 <span key={item.id}>
-                  {item.title} - {item.date}; <br />  
+                  {item.title} - {item.date}; <br />
                 </span>
               ))}
             </ul>
@@ -58,23 +87,23 @@ const Home = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <div className={style.statCard}>
-            <Typography variant="h5">{t('auction.new-users')}</Typography>
+            <Typography variant="h5">{t("auction.new-users")}</Typography>
             <Typography variant="h3">{stats.newUsers}</Typography>
           </div>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <div className={style.statCard}>
-            <Typography variant="h5">{t('auction.total-sales')}</Typography>
+            <Typography variant="h5">{t("auction.total-sales")}</Typography>
             <Typography variant="h3">{stats.totalSales}</Typography>
           </div>
         </Grid>
       </Grid>
 
       <div className={style.chartContainer}>
-        <Typography variant="h5">{t('auction.total-sales')}</Typography>
+        <Typography variant="h5">{t("auction.total-sales")}</Typography>
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={salesData}>
-          <Line type="monotone" dataKey="sales" stroke="#806903" />
+            <Line type="monotone" dataKey="sales" stroke="#806903" />
             <CartesianGrid stroke="#ccc" />
             <XAxis dataKey="name" />
             <YAxis />
@@ -84,7 +113,7 @@ const Home = () => {
       </div>
 
       <Typography variant="h4" className={style.pageTitle}>
-      {t('auction.auctions-active')}
+        {t("auction.auctions-active")}
       </Typography>
       <Grid container spacing={2} className={style.itemContainer}>
         {stats.lastItemsSold.map((item) => (
@@ -95,7 +124,7 @@ const Home = () => {
                 height="140"
                 image={item.imageUrl || "https://via.placeholder.com/300x200"}
                 alt={item.title}
-                sx={{ objectFit: 'cover' }}   
+                sx={{ objectFit: "cover" }}
               />
               <CardContent>
                 <Typography variant="h5" component="div">
@@ -107,7 +136,7 @@ const Home = () => {
               </CardContent>
               <CardActions>
                 <Button size="small" onClick={() => handleViewItem(item.id)}>
-                  {t('auction.view-details')}
+                  {t("auction.view-details")}
                 </Button>
               </CardActions>
             </Card>

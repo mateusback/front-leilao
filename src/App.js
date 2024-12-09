@@ -12,6 +12,8 @@ import Profile from './pages/profile/Profile';
 import EditProfile from './pages/profile/EditProfile';
 import { ToastContainer } from 'react-toastify';
 import ConfirmEmail from './pages/confirm-email/ConfirmEmail';
+import AuctionForm from './pages/auction/auction-form/AuctionForm';
+import CategoryForm from './pages/category/category-form/CategoryForm';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
             <Route path={ROUTES.HOME} element={<DefaultLayout><Home /></DefaultLayout>} />
             <Route path={ROUTES.PROFILE} element={<Profile />} />
             <Route path={ROUTES.EDIT_PROFILE} element={<EditProfile  />} />
+            <Route path={ROUTES.CATEGORY_FORM} element={<DefaultLayout><CategoryForm  /></DefaultLayout>} />
+            <Route path={ROUTES.AUCTION_FORM} element={<DefaultLayout><AuctionForm  /></DefaultLayout>} />
           </Route>
           <Route path={ROUTES.LOGIN} element={<Login />} />
           <Route path={ROUTES.REGISTER} element={<Register />} />

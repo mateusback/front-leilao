@@ -7,4 +7,6 @@ export const ROUTES = {
     PROFILE: '/profile',
     EDIT_PROFILE: '/edit-profile',
     CONFIRM_EMAIL: '/confirm-email',
+    CATEGORY_FORM: '/category-form',
+    AUCTION_FORM: '/auction-form',
 };
