@@ -57,11 +57,11 @@ const ItemDetails = () => {
             {auction.description}
           </Typography>
           <Typography variant="subtitle1">
-            <strong>{t("auction.start-date")}: </strong>
+            <strong>{t("auction.start-date-time")}: </strong>
             {new Date(auction.startDateTime).toLocaleString()}
           </Typography>
           <Typography variant="subtitle1">
-            <strong>{t("auction.end-date")}: </strong>
+            <strong>{t("auction.end-date-time")}: </strong>
             {new Date(auction.endDateTime).toLocaleString()}
           </Typography>
           <Typography variant="subtitle1">

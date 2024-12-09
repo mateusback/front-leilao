@@ -47,7 +47,9 @@
 		"image-name": "Nome da Imagem",
 		"image-path": "Link da Imagem",
 		"add-image": "Adicionar Imagem",
-		"no-items-available": "Nenhum item disponível, você pode adicionar um novo item clicando no botão a cima."
+		"no-items-available": "Nenhum item disponível, você pode adicionar um novo item clicando no botão a cima.",
+		"owner": "Dono",
+		"back": "Voltar"
 	},
 	"category": {
 		"add-category": "Adicionar Categoria",
@@ -106,5 +108,9 @@
 			"field": "Código",
 			"passcode-required": "Código é obrigatório."
 		}
+	},
+	"loading": {
+		"loading-itens": "Carregando itens...",
+		"loading-details": "Carregando detalhes..."
 	}
 }

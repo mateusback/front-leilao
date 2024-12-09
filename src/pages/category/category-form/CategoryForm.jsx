@@ -14,7 +14,7 @@ const CategoryForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     observation: "",
-    personId: 1, 
+    personId: 23  , 
   });
 
   const handleChange = (e) => {
@@ -25,7 +25,7 @@ const CategoryForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      const response = categoryService.insert(formData)
+      categoryService.insert(formData)
       navigate(ROUTES.HOME);
       toast.success("Categoria criada com sucesso!", {
         position: "top-center",
@@ -75,8 +75,17 @@ const CategoryForm = () => {
               onChange={handleChange}
             />
           </Grid>
-          <div style={{ marginTop: "20px" }}>
-            <Button variant="contained" color="primary" type="submit">
+          <div style={{ marginTop: "20px", marginLeft: '20px' }}>
+            <Button variant="contained" color="primary" type="submit"
+                          sx={{
+                            borderRadius: '5px',
+                            color: '#2f2600',
+                            backgroundColor: '#fef2c2',
+                            borderColor: '#2f2600',
+                            '&:hover': {
+                              borderColor: '#151100',
+                              backgroundColor: '#fbdd64',
+                            }}}>
               {t("category.save")}
             </Button>
             <Button
@@ -84,6 +93,15 @@ const CategoryForm = () => {
               color="secondary"
               style={{ marginLeft: "10px" }}
               onClick={() => navigate(ROUTES.HOME)}
+              sx={{
+                borderRadius: '5px',
+                color: '#2f2600',
+                borderColor: '#fbdd64', 
+                '&:hover': {
+                  borderColor: '#fbdd64',
+                  backgroundColor: '#fef2c2',
+                }
+              }}
             >
               {t("category.cancel")}
             </Button>

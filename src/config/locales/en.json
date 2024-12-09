@@ -47,7 +47,9 @@
 		"image-name": "Image Name",
 		"image-path": "Image Link",
 		"add-image": "Add Image",
-		"no-items-available": "No items available, you can add a new item by clicking the button above."
+		"no-items-available": "No items available, you can add a new item by clicking the button above.",
+		"owner": "Owner",
+		"back": "Back"
 	},
 	"category": {
 		"add-category": "Add Category",
@@ -106,5 +108,9 @@
 			"field": "Passcode",
 			"passcode-required": "Passcode is required"
 		}
+	},
+	"loading": {
+		"loading-itens": "Loading items...",
+		"loading-details": "Loading details..."
 	}
 }

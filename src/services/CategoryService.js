@@ -42,7 +42,8 @@ class CategoryService extends BaseService {
         } catch (error) {
           throw new Error(error.response?.data?.message || "Erro ao buscar categorias, tente novamente mais tarde.");
         }
-      }
+    }
+
 }
 
 export default CategoryService;

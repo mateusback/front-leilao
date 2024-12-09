@@ -7,12 +7,14 @@ import {
   IconButton,
   MenuItem,
 } from "@mui/material";
+import { toast } from "react-toastify";
 import { Add, Remove } from "@mui/icons-material";
 import { useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ROUTES } from "../../../routes";
 import AuctionService from "../../../services/AuctionService";
 import CategoryService from "../../../services/CategoryService";
+import Divider from '@mui/material/Divider';
 
 const AuctionForm = () => {
   const { t } = useTranslation();
@@ -32,7 +34,7 @@ const AuctionForm = () => {
     observation: "",
     incrementValue: "",
     minimumBid: "",
-    personId: 3,
+    personId: 23,
     categoryId: "",
     images: [],
   });
@@ -95,8 +97,25 @@ const AuctionForm = () => {
         await auctionService.insert(formData);
       }
       navigate(ROUTES.HOME);
-    } catch (error) {
-      console.error("Erro ao salvar leilão:", error.message);
+      toast.success("Categoria criada com sucesso!", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
+    } catch (err) {
+      toast.error(err.message || "Erro ao Cadastrar Categoria.", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
     }
   };
 
@@ -210,9 +229,12 @@ const AuctionForm = () => {
           </Grid>
           {}
           <Grid item xs={12}>
-            <Typography variant="h5" gutterBottom>
+          <Divider>
+            <Typography variant="h5"
+            sx={{color: "#4f4c35"}}>
               {t("auction.images")}
             </Typography>
+          </Divider>
             {formData.images.map((image, index) => (
               <Grid container spacing={2} key={index} alignItems="center">
                 <Grid item xs={5}>
@@ -246,18 +268,40 @@ const AuctionForm = () => {
               </Grid>
             ))}
             <Button
-              variant="outlined"
+              variant="contained"
               color="primary"
               onClick={handleAddImage}
               startIcon={<Add />}
               style={{ marginTop: "10px" }}
+              sx={{
+                marginBottom: '20px',
+                borderRadius: '5px',
+                color: '#2f2600',
+                backgroundColor: '#fef2c2',
+                borderColor: '#2f2600',
+                '&:hover': {
+                  borderColor: '#151100',
+                  backgroundColor: '#fbdd64',
+                }
+              }}
             >
               {t("auction.add-image")}
             </Button>
           </Grid>
         </Grid>
-        <div style={{ marginTop: "20px" }}>
-          <Button variant="contained" color="primary" type="submit">
+        <Divider/>
+        <Grid container spacing={2} sx={{marginTop: '20px', marginLeft: '10px'}}>
+          <Button variant="outlined" color="primary" type="submit"
+                      sx={{
+                        borderRadius: '5px',
+                        color: '#2f2600',
+                        backgroundColor: '#fef2c2',
+                        borderColor: '#2f2600',
+                        '&:hover': {
+                          borderColor: '#151100',
+                          backgroundColor: '#fbdd64',
+                        }
+                      }}>
             {t("auction.save")}
           </Button>
           <Button
@@ -265,10 +309,19 @@ const AuctionForm = () => {
             color="secondary"
             style={{ marginLeft: "10px" }}
             onClick={() => navigate(ROUTES.HOME)}
+            sx={{
+              borderRadius: '5px',
+              color: '#2f2600',
+              borderColor: '#fbdd64', 
+              '&:hover': {
+                borderColor: '#fbdd64',
+                backgroundColor: '#fef2c2',
+              }
+            }}
           >
             {t("auction.cancel")}
           </Button>
-        </div>
+        </Grid>
       </form>
     </div>
   );

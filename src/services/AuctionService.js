@@ -42,7 +42,16 @@ class AuctionService extends BaseService {
         } catch (error) {
           throw new Error(error.response?.data?.message || "Erro ao buscar leilões, tente novamente mais tarde.");
         }
-      }
+    }
+    
+    async getById(id) {
+        try{
+            const response = await this.api.get(`${this.endpoint}/${id}`);
+            return response.data;
+        } catch (error) {
+            throw new Error(error.response?.data?.message || "Erro ao buscar leilão, tente novamente mais tarde.");
+        }
+    }
 }
 
 
