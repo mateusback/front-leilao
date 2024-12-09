@@ -13,6 +13,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../routes";
 import { useTranslation } from "react-i18next";
+import interrogacao from '../../resources/images/interrogacao.png';
 import AuctionService from "../../services/AuctionService";
 
 const auctionService = new AuctionService();
@@ -93,6 +94,11 @@ const Home = () => {
             <Typography variant="h6" color="text.secondary">
               {t("auction.no-items-available")}
             </Typography>
+            <img 
+              src={interrogacao} 
+              alt="No items available" 
+              style={{ width: "66px", height: "66px" }} 
+            />
           </div>
         ) : (
           auctions.map((auction) => (
@@ -101,7 +107,9 @@ const Home = () => {
                 <CardMedia
                   component="img"
                   height="140"
-                  image={auction.imageUrl || "https://via.placeholder.com/300x200"}
+                  image={auction.images && auction.images.length > 0
+                    ? auction.images[0].imagePath
+                    : "https://via.placeholder.com/300x200"}
                   alt={auction.title}
                   sx={{ objectFit: "cover" }}
                 />

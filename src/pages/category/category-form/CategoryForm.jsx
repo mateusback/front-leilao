@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import CategoryService from "../../../services/CategoryService";
 import { ROUTES } from "../../../routes";
+import { toast } from 'react-toastify';
 
 const CategoryForm = () => {
   const { t } = useTranslation();
@@ -23,11 +24,33 @@ const CategoryForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    categoryService.insert(formData)
+    try {
+      const response = categoryService.insert(formData)
+      navigate(ROUTES.HOME);
+      toast.success("Categoria criada com sucesso!", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
+    } catch (err) {
+      toast.error(err.message || "Erro ao Cadastrar Categoria.", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
+    }
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px", height: "40em" }}>
       <Typography variant="h4" gutterBottom>
         {t("category.add-category")}
       </Typography>

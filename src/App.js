@@ -14,6 +14,7 @@ import { ToastContainer } from 'react-toastify';
 import ConfirmEmail from './pages/confirm-email/ConfirmEmail';
 import AuctionForm from './pages/auction/auction-form/AuctionForm';
 import CategoryForm from './pages/category/category-form/CategoryForm';
+import ItemDetails from './pages/auction/item-details/ItemDetails';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path={ROUTES.EDIT_PROFILE} element={<EditProfile  />} />
             <Route path={ROUTES.CATEGORY_FORM} element={<DefaultLayout><CategoryForm  /></DefaultLayout>} />
             <Route path={ROUTES.AUCTION_FORM} element={<DefaultLayout><AuctionForm  /></DefaultLayout>} />
+            <Route path={`${ROUTES.ITEM_DETAILS}/:itemId`} element={<DefaultLayout><ItemDetails  /></DefaultLayout>} />
           </Route>
           <Route path={ROUTES.LOGIN} element={<Login />} />
           <Route path={ROUTES.REGISTER} element={<Register />} />

@@ -9,4 +9,5 @@ export const ROUTES = {
     CONFIRM_EMAIL: '/confirm-email',
     CATEGORY_FORM: '/category-form',
     AUCTION_FORM: '/auction-form',
+    ITEM_DETAILS: '/item-details'
 };

@@ -29,7 +29,8 @@ const Login = () => {
   const login = async () => {
     try {
       const response = await personService.login(usuario);
-      let token = response.token;
+      console.log(response);
+      let token = response.data;
       localStorage.setItem("token", token);
       localStorage.setItem("email", JSON.stringify(usuario.email));
       navigate(ROUTES.HOME);

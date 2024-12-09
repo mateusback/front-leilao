@@ -46,7 +46,8 @@
 		"images": "Images",
 		"image-name": "Image Name",
 		"image-path": "Image Link",
-		"add-image": "Add Image"
+		"add-image": "Add Image",
+		"no-items-available": "No items available, you can add a new item by clicking the button above."
 	},
 	"category": {
 		"add-category": "Add Category",

@@ -1,0 +1,29 @@
+.detailsContainer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .detailsCard {
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  .galleryContainer {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 20px;
+  }
+  
+  .galleryTitle {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: center;
+  }
+  

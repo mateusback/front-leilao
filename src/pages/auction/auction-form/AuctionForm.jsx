@@ -1,19 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { TextField, Button, Grid, Typography, IconButton, MenuItem } from "@mui/material";
+import {
+  TextField,
+  Button,
+  Grid,
+  Typography,
+  IconButton,
+  MenuItem,
+} from "@mui/material";
 import { Add, Remove } from "@mui/icons-material";
 import { useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import axios from "axios";
 import { ROUTES } from "../../../routes";
 import AuctionService from "../../../services/AuctionService";
-
+import CategoryService from "../../../services/CategoryService";
 
 const AuctionForm = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { auctionId } = useParams();
-  const [categories, setCategories] = useState([]);
   const auctionService = new AuctionService();
+  const categoryService = new CategoryService();
+
+  const [categories, setCategories] = useState([]);
   const [formData, setFormData] = useState({
     id: "",
     title: "",
@@ -24,23 +32,34 @@ const AuctionForm = () => {
     observation: "",
     incrementValue: "",
     minimumBid: "",
-    personId: 1, 
+    personId: 3,
     categoryId: "",
-    images: [], 
+    images: [],
   });
 
   useEffect(() => {
-    axios
-      .get("/api/category")
-      .then((response) => setCategories(response.data))
-      .catch((error) => console.error("Erro ao buscar categorias:", error));
+    const fetchCategories = async () => {
+      try {
+        const data = await categoryService.getAll();
+        setCategories(data);
+      } catch (error) {
+        console.error("Erro ao buscar categorias:", error.message);
+      }
+    };
 
-    if (auctionId) {
-      axios
-        .get(`/api/auction/${auctionId}`)
-        .then((response) => setFormData(response.data))
-        .catch((error) => console.error("Erro ao buscar dados do leilão:", error));
-    }
+    const fetchAuction = async () => {
+      if (auctionId) {
+        try {
+          const data = await auctionService.getById(auctionId);
+          setFormData(data);
+        } catch (error) {
+          console.error("Erro ao buscar dados do leilão:", error.message);
+        }
+      }
+    };
+
+    fetchCategories();
+    fetchAuction();
   }, [auctionId]);
 
   const handleChange = (e) => {
@@ -66,12 +85,19 @@ const AuctionForm = () => {
     setFormData({ ...formData, images: updatedImages });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    auctionService.insert(formData)
-      .then(() => navigate(ROUTES.HOME))
-      .catch((error) => console.error("Erro ao salvar leilão:", error));
+    try {
+      if (auctionId) {
+        await auctionService.update(formData);
+      } else {
+        await auctionService.insert(formData);
+      }
+      navigate(ROUTES.HOME);
+    } catch (error) {
+      console.error("Erro ao salvar leilão:", error.message);
+    }
   };
 
   return (

@@ -46,7 +46,8 @@
 		"images": "Imagens",
 		"image-name": "Nome da Imagem",
 		"image-path": "Link da Imagem",
-		"add-image": "Adicionar Imagem"
+		"add-image": "Adicionar Imagem",
+		"no-items-available": "Nenhum item disponível, você pode adicionar um novo item clicando no botão a cima."
 	},
 	"category": {
 		"add-category": "Adicionar Categoria",
